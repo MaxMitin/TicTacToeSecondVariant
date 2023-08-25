@@ -1,19 +1,21 @@
 package org.example;
 
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
+import javax.swing.*;
+import java.awt.*;
+
 public class Main {
     public static void main(String[] args) {
-        // Press Alt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
 
-        // Press Shift+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
-
-            // Press Shift+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
-        }
+        //System.out.println("Запускаем игру.");
+        //System.out.println("Завершаем игру.");
+        JFrame window = new JFrame("Игра Крестик-Нолик"); //главное окно
+        window.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE); // кнопка Х, закрывающая окно
+        window.setSize(400, 400); //размер окна
+        window.setLayout(new BorderLayout()); // менеджер компоновки
+        window.setLocationRelativeTo(null); // чтобы окно было по центру экрана
+        window.setVisible(true); // видимость окна
+        TicTacToe game = new TicTacToe(); // создание объекта класса Игры
+        window.add(game); // добавление объекта в окно
+        //System.out.println("Конец");
     }
 }
